@@ -34,4 +34,4 @@ for i in 0..n-1
   sum = array[0][0..i].inject(:+) + array[1][i..line_2.length-1].inject(:+)
   sums << sum
 end
-p sums.max
+puts sums.max

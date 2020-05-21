@@ -13,15 +13,13 @@ for i in 0..s.length-1
     break
   end
 end
-  
 for i in 0..s.length-1
   if s[-1-i] == "Z"
     fin = s.length - i
     break
   end
 end
-
-# puts fin - str
+puts fin - str
 
 #問題3
 n = gets.to_i

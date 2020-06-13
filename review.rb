@@ -1,32 +1,20 @@
-# #復習用
-# map = Array.new(10){gets.chomp.split("")}
-# cnt = map.flatten.count("o") + 1
+# n, m = gets.split.map(&:to_i)
+# g = Array.new(n) { Array.new(n, false) }
+# p g
 
-# dx = [1, -1, 0, 0]
-# dy = [0, 0, 1, -1]
-
-# 10.times do |i|
-#   10.times do |j|
-#     visit = Array.new(10){Array.new(10, false)}
-#     visit[i][j] = true
-#     queue = [[i, j]]
-#     while !queue.empty?
-#       x, y = queue.shift
-#       4.times do |dir|
-#         mx = x + dx[dir]
-#         my = y + dy[dir]
-#         next if mx < 0 || my < 0 || mx >= 10 || my >= 10
-#         if !visit[mx][my] && map[mx][my] == "o"
-#           visit[mx][my] = true
-#           queue.push([mx, my])
-#         end
-#       end
-#     end
-#     if visit.flatten.count(true) == cnt
-#       puts "YES"
-#       exit
-#     end
-#   end
+# m.times do |i|
+#   u, v = gets.split(" ").map(&:to_i)
+#   u -= 1; v -= 1
+#   g[u][v] = true; g[v][u] = true
 # end
 
-# puts "NO"
+# seen = Array.new(n, false)
+# n.times do |i|
+#   next if seen[i]
+
+#   queue = g[i].map.with_index.select{ |x, j| x }.map { |x, j| [i, j] }
+#   # p g[i].map.with_index.select{ |x, j| x }#.map{ |x, j| [i, j] }
+#   p queue
+# end
+
+puts 2 ** 20 - 10 ** 6

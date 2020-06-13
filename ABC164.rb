@@ -34,10 +34,3 @@ for i in 1..n
   array << gets.chomp
 end
 puts array.uniq.length
-
-#問題4(不正解)
-# s = gets.chomp
-# p a = s.each_char.map(&:to_i)
-
-# p a
-# p a.reverse

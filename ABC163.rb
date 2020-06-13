@@ -1,6 +1,6 @@
 #問題1
 r = gets.to_f
-puts (r * 2) * 3.14
+puts (r * 2) * Math::PI
 
 #問題2
 n, m = gets.split(" ").map(&:to_i)

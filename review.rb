@@ -16,5 +16,3 @@
 #   # p g[i].map.with_index.select{ |x, j| x }#.map{ |x, j| [i, j] }
 #   p queue
 # end
-
-puts 2 ** 20 - 10 ** 6

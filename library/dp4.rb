@@ -8,18 +8,24 @@ array = [7, 5, 3, 1, 8]
 A = 12
 mod = 1000000009
 
-dp = [0]
-cnt = 0
+dp = Hash.new
+dp[0] = 0
+
 n.times do |i|
   dp_tmp = dp.clone
-  dp.each do |d|
-    sum = d + array[i]
-    if sum == A
-      cnt += 1
-      cnt = cnt % mod
+  dp.each do |k, v|
+    sum = k + array[i]
+    if !dp_tmp[sum]
+      dp_tmp[sum] = 1
+    elsif dp[sum]
+      dp_tmp[sum] += 1
     end
-    dp_tmp << sum
   end
   dp = dp_tmp
 end
-puts cnt
+
+if dp[A].nil?
+  puts -1
+else
+  puts dp[A] % mod
+end

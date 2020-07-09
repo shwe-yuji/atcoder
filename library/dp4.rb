@@ -14,7 +14,7 @@ dp[0] = 0
 n.times do |i|
   dp_tmp = dp.clone
   dp.each do |k, v|
-    sum = k + array[i]
+    sum = (k + array[i]) % mod
     if !dp_tmp[sum]
       dp_tmp[sum] = 1
     elsif dp[sum]
@@ -27,5 +27,5 @@ end
 if dp[A].nil?
   puts -1
 else
-  puts dp[A] % mod
+  puts dp[A]
 end

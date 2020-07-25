@@ -49,3 +49,33 @@
 #     puts "g" if [mx, my] == goal
 #   end
 # end
+
+# n = gets.to_i
+# array = Array.new(n){gets.split(" ").map(&:to_i)}
+
+# dp = [array[0].max, array[0].index(array[0].max)]
+
+# sum = dp[0]
+# (n-1).times do |i|
+#   if dp[1] == array[i+1].index(array[i+1].max)
+#     max = array[i+1].sort[1]
+#   else
+#     max = array[i+1].max
+#   end
+#   dp_next = [max, array[i+1].index(max)]
+#   dp = dp_next
+#   sum += dp[0]
+# end
+
+# puts sum
+
+N = gets.to_i
+dp = Array.new(N + 1){[0,0,0]}
+(1 .. N).each do |n|
+  a,b,c = gets.split.map(&:to_i)
+  dp[n][0] = [dp[n - 1][1] + a, dp[n - 1][2] + a].max
+  dp[n][1] = [dp[n - 1][2] + b, dp[n - 1][0] + b].max
+  dp[n][2] = [dp[n - 1][0] + c, dp[n - 1][1] + c].max
+end
+p dp
+puts dp[N].max

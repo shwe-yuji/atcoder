@@ -7,7 +7,7 @@ n = 4
 array = [1, 1, 1, 1]
 A = 4
 
-inf = 9999999999
+inf = 999999999999
 dp = Array.new(A+1, inf) 
 dp[0] = 0
 

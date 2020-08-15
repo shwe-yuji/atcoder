@@ -69,13 +69,80 @@
 
 # puts sum
 
-N = gets.to_i
-dp = Array.new(N + 1){[0,0,0]}
-(1 .. N).each do |n|
-  a,b,c = gets.split.map(&:to_i)
-  dp[n][0] = [dp[n - 1][1] + a, dp[n - 1][2] + a].max
-  dp[n][1] = [dp[n - 1][2] + b, dp[n - 1][0] + b].max
-  dp[n][2] = [dp[n - 1][0] + c, dp[n - 1][1] + c].max
-end
-p dp
-puts dp[N].max
+# N = gets.to_i
+# dp = Array.new(N + 1){[0,0,0]}
+# (1 .. N).each do |n|
+#   a,b,c = gets.split.map(&:to_i)
+#   dp[n][0] = [dp[n - 1][1] + a, dp[n - 1][2] + a].max
+#   dp[n][1] = [dp[n - 1][2] + b, dp[n - 1][0] + b].max
+#   dp[n][2] = [dp[n - 1][0] + c, dp[n - 1][1] + c].max
+# end
+# p dp
+# puts dp[N].max
+
+# h, w = gets.split(" ").map(&:to_i)
+# map = Array.new(h){gets.chomp.split("")}
+# p map
+
+# dx = [1, -1, 0, 0]
+# dy = [0, 0, 1, -1]
+
+
+# h.times do |i|
+#   w.times do |j|
+#     next if map[i][j] == "."
+#     start = [i, j]
+#     queue = [start]
+#     status = true
+#     seen = Array.new(h){Array.new(w, false)}
+#     seen[i][j] = true
+#     cnt = 0
+#     while !queue.empty?
+#       x, y = queue.shift
+#       4.times do |dir|
+#         mx = x + dx[dir]
+#         my = y + dy[dir]
+#         next if mx < 0 || my < 0 || mx >= h || my >= w
+#         next if seen[mx][my]
+#         if status && map[mx][my] == "."
+#         #   p "a #{[i, j]} #{queue}"
+#           status = false
+#           seen[mx][my] = true
+#           queue << [mx, my]
+#         elsif !status && map[mx][my] == "#"
+#         #   p "b #{[i, j]} #{queue}"
+#           status = true
+#           seen[mx][my] = true
+#           queue << [mx, my]
+#         elsif status && map[mx][my] == "#"
+#         #   p "c #{[i, j]} #{queue}"
+#           next
+#         elsif !status && map[mx][my] == "."
+#         #   p "d #{[i, j]} #{queue}"
+#           next
+#         end
+#         # p "#{[i, j]} #{[mx, my]}"
+#         cnt += 1
+#       end
+#       p "#{[i, j]} #{queue} #{cnt}"
+#     end
+#     # p "#{[i, j]} #{queue}"
+#     # puts ""
+#   end
+# end
+
+
+
+n = gets.to_i
+a = Array.new(n,0)
+p a
+
+# a.map! do
+#   s = gets.split(".")
+#   res = s[0].to_i*1000000000
+#   if s.size >1
+#     res += s[1].to_i*(10**(10-s[1].size))
+#   end
+# end
+
+# p a
